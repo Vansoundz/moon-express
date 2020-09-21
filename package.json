@@ -5,6 +5,9 @@
   "main": "app.js",
   "author": "vansoundz",
   "license": "MIT",
+  "engines": {
+    "node": "13.x"
+  },
   "scripts": {
     "conc": "concurrently \"yarn dev\" \"cd client && yarn start\"",
     "dev": "nodemon app.ts",
