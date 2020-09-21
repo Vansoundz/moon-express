@@ -12,8 +12,7 @@
     "conc": "concurrently \"yarn dev\" \"cd client && yarn start\"",
     "dev": "nodemon app.ts",
     "start": "node app.js",
-    "build": "tsc",
-    "heroku-postbuild": "cd client && yarn install && yarn build"
+    "build": "tsc"
   },
   "dependencies": {
     "@types/cookie-parser": "^1.4.2",
