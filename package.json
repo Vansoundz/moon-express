@@ -1,0 +1,56 @@
+{
+  "name": "moon",
+  "version": "1.0.0",
+  "description": "luxurious housing",
+  "main": "app.js",
+  "author": "vansoundz",
+  "license": "MIT",
+  "scripts": {
+    "conc": "concurrently \"yarn dev\" \"cd client && yarn start\"",
+    "dev": "nodemon app.ts",
+    "start": "node app.js",
+    "build": "tsc",
+    "heroku-postbuild": "cd client && yarn install && yarn build"
+  },
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.2",
+    "@types/csurf": "^1.9.36",
+    "@types/node": "^14.10.1",
+    "@types/nodemailer": "^6.4.0",
+    "aws-sdk": "^2.756.0",
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^5.1.0",
+    "config": "^3.3.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.7-alpha.3",
+    "express-validator": "^6.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.5",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "nodemailer": "^6.4.11",
+    "nodemon": "^2.0.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "eslintConfig": {
+    "rules": {
+      "semi": "off"
+    }
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/config": "^0.0.36",
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.8",
+    "@types/express-validator": "^3.0.0",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/mongoose": "^5.7.36",
+    "@types/multer": "^1.4.4",
+    "@types/multer-s3": "^2.7.8"
+  }
+}

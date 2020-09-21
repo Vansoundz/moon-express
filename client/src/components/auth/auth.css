@@ -1,0 +1,50 @@
+.form-item {
+  position: relative;
+  margin: 12px 0;
+}
+
+.form-icon {
+  position: absolute;
+  margin-top: 5px;
+  color: #00000094;
+  font-size: 22px;
+  margin-left: 4px;
+}
+
+.form-item > input {
+  padding: 8px 0 8px 28px;
+}
+
+input,
+textarea {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 280px;
+}
+
+textarea {
+  padding: 8px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid rgba(145, 227, 233, 0.857);
+}
+
+form button {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 24px;
+  background: #00d0ff;
+  box-shadow: 0px 0px 6px #b5b5b5;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  background: #0033ffcb;
+}
