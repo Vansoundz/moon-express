@@ -77,26 +77,28 @@ router.get("/:id", async (req: Request, res: Response) => {
   }
 });
 
-router.get("/", async (req: Request, res: Response) => {
+router.get("/", auth, async (req: Request, res: Response) => {
   try {
-    let token = req.cookies.auth;
+    // let token = req.cookies.auth;
+    // let token = req.headers["moon-auth"];
+    // console.log(token);
 
-    if (!token) {
-      return res.json({
-        errors: [{ msg: "Invalid token" }],
-      });
-    }
+    // if (!token) {
+    //   return res.json({
+    //     errors: [{ msg: "Invalid token" }],
+    //   });
+    // }
 
-    let auth = jwt.verify(token, config.get("jwtSecret"));
+    // let auth = jwt.verify(token.toString(), config.get("jwtSecret"));
 
+    // // @ts-ignore
+    // if (!auth) {
+    //   return res.json({
+    //     errors: [{ msg: "Invalid token" }],
+    //   });
+    // }
     // @ts-ignore
-    if (!auth) {
-      return res.json({
-        errors: [{ msg: "Invalid token" }],
-      });
-    }
-    // @ts-ignore
-    let user = await User.findById(auth.user.id)
+    let user = await User.findById(req.user.id)
       .select("-password")
       .populate("properties");
     if (user) return res.status(200).json({ user });

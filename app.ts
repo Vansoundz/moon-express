@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 5000;
 
 (async () => {
   const URI: string = process.env.mongoURI!;
-  connectDB(URI);
+  await connectDB(URI);
 
   // app.use("/api/files", express.static(path.join(__dirname, "files")));
   app.use(express.static("static"));

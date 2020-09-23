@@ -3,7 +3,9 @@ import config from "config";
 import { NextFunction, Request, Response } from "express";
 
 const auth = (req: Request, res: Response, next: NextFunction) => {
-  const token = req.cookies.auth;
+  const token = req.headers["moon-auth"];
+
+  // const token = req.cookies.auth;
 
   if (!token) {
     return res.status(401).json({
@@ -13,7 +15,7 @@ const auth = (req: Request, res: Response, next: NextFunction) => {
   }
 
   try {
-    let auth = jwt.verify(token, config.get("jwtSecret"));
+    let auth = jwt.verify(token.toString(), config.get("jwtSecret"));
     // @ts-ignore
     req.user = auth.user;
     next();
